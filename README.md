@@ -175,16 +175,62 @@ Solo esos objetos:
 - y se incluyen en el histograma resultante.
 
 ----
-### Escala
+### Ajuste interactivo de escala
 
 Imagen
 
-Explicación
+
+Este bloque permite calibrar la escala de una imagen usando controles interactivos.  
+El usuario mueve sliders para posicionar una barra de escala sobre una distancia real presente en la imagen.
+
+### Controles
+
+- **x_ini**: ajusta el borde izquierdo de la barra.  
+- **x_fin**: ajusta el borde derecho.  
+- **y_pos**: mueve la barra verticalmente.  
+- **longitud_real**: distancia real conocida (ejemplo: `5 µm`, `500 nm`, `0.02 mm`).
+
+### 📝 Cómo funciona
+
+El usuario coloca la barra sobre la referencia real moviendo los sliders.  
+La longitud ingresada se convierte internamente a la escala deseada (micrómetros, nanometros, etc) y se compara con la distancia en píxeles entre `x_ini` y `x_fin`.  
+Con esto se obtiene la escala real por píxel.  
+
+La interfaz muestra:
+- la imagen completa con la barra de escala,
+- un zoom para ajuste preciso,
+- el valor final de la escala expresado en la unidad ingresada.
 
 ----
 ### Gráfica
 
+Este bloque permite generar histogramas interactivos a partir de medidas procesadas (diámetros, anchos o largos), aplicar un ajuste gaussiano opcional y exportar la gráfica en formato PDF mediante un checkbox persistente.
 
+### Controles principales
+
+- **tipo_medida**: selecciona si el histograma usa datos de *centroide* o de *elipse*.  
+- **usar_ancho / usar_largo**: aparecen solo cuando se elige *elipse* y permiten elegir qué dimensión usar.  
+- **bin_method**: selección entre cálculo automático de bins (Sturges) o configuración manual.  
+- **manual_bins**: número de bins cuando se usa el modo manual.  
+- **show_fit**: activa o desactiva el ajuste gaussiano.  
+- **titulo**: texto del título del gráfico.
+
+### Funcionamiento
+
+1. Se seleccionan los datos dependiendo del tipo de medida elegido.  
+2. Las medidas se convierten automáticamente a unidades reales utilizando el valor obtenido durante la calibración de escala (`UU`).  
+3. Se calcula la cantidad de bins usando el método de Sturges o el valor manual configurado.  
+4. Se genera un histograma estilizado con Matplotlib.  
+5. Si está activado el ajuste gaussiano, se calcula una curva de mejor ajuste y se muestra su media, desviación estándar y error.  
+6. Se presenta un checkbox persistente **“Guardar como PDF”** que exporta la figura actual con los parámetros seleccionados.
+
+### Guardar
+
+El checkbox "Guardar como PDF" permite descargar directamente el histograma en alta resolución.  
+Al activarlo:
+- la figura actual se guarda como `histograma_exportado.pdf`,
+- el archivo se descarga automáticamente,
+- y el checkbox se reinicia para evitar exportaciones repetidas no deseadas.
 ---
 ## Citación
 
