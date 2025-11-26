@@ -241,7 +241,7 @@ Pachitariu, M., Rariden, M., & Stringer, C. (2025).
 *Cellpose-SAM: superhuman generalization for cellular segmentation*. bioRxiv.  
 Disponible en: https://www.biorxiv.org/content/10.1101/2025.04.28.651001v1
 
-### Cellpose 1.0
+### Cellpose 3.0
 Stringer, C., Wang, T., Michaelos, M., & Pachitariu, M. (2021).  
 *Cellpose: a generalist algorithm for cellular segmentation*. Nature Methods, 18(1), 100–106.
 
