@@ -68,15 +68,18 @@ El notebook incluye una interfaz gráfica interactiva, diseñada para analizar i
 En esta sección se explica cómo usar la GUI:
 
 ----
-
 <img width="380" height="380" alt="image" src="https://github.com/user-attachments/assets/5cc33f32-9215-48be-842b-2de38a38230b" />
-Este bloque del código se encarga de configurar automáticamente el entorno de ejecución y preparar el modelo para su uso:
 
+
+Este bloque del código se encarga de configurar automáticamente el entorno de ejecución y preparar el modelo para su uso:
 - Detecta si Colab dispone de **GPU** o **CPU**, y selecciona el mejor dispositivo disponible.
 - Descarga el archivo del modelo entrenado (`Trained_model.cpn`) desde Google Drive.
 - Carga el modelo personalizado en el **Código**.
 ----
-Esta sección del código permite al usuario **subir una imagen TEM** directamente desde su dispositivo y la prepara para ser procesada por el modelo:
+Esta sección del código permite al usuario **subir una imagen* directamente desde su dispositivo y la prepara para ser procesada por el modelo:
+
+
+
 <img width="500" height="949" alt="image" src="https://github.com/user-attachments/assets/9e183b9a-6df2-4c56-99b9-999f186f5f8f" />
 
 ----
