@@ -188,9 +188,9 @@ El usuario mueve sliders para posicionar una barra de escala sobre una distancia
 - **x_ini**: ajusta el borde izquierdo de la barra.  
 - **x_fin**: ajusta el borde derecho.  
 - **y_pos**: mueve la barra verticalmente.  
-- **longitud_real**: distancia real conocida (ejemplo: `5 µm`, `500 nm`, `0.02 mm`).
+- **longitud_real**: distancia real conocida (ejemplo: `5 µm`, `500 nm`, `200 nm`).
 
-### 📝 Cómo funciona
+### Cómo funciona
 
 El usuario coloca la barra sobre la referencia real moviendo los sliders.  
 La longitud ingresada se convierte internamente a la escala deseada (micrómetros, nanometros, etc) y se compara con la distancia en píxeles entre `x_ini` y `x_fin`.  
